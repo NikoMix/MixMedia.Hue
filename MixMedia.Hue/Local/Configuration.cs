@@ -13,10 +13,12 @@ namespace MixMedia.Hue.Local
     public class Configuration
     {
         private readonly HttpClient client;
-        public Configuration(HttpClient client)
+        private readonly ServiceSettings settings;
+        public Configuration(HttpClient client, ServiceSettings settings)
         {
-             this.client = client;
+            this.client = client;
             client.BaseAddress = new Uri("http://192.168.0.12");
+            this.settings = settings;
         }
 
         public async Task<List<SuccessResponse<CreateUserResponse>>> CreateUser(string applicationName, string deviceName)
@@ -33,15 +35,22 @@ namespace MixMedia.Hue.Local
 
         public async Task GetConfiguration()
         {
-            
+            await client.GetAsync($"/api/{settings.Username}/config");
+        }
+
+        public async void ModifyConfiguration()
+        {
+            await client.PutAsync($"/api/{settings.Username}/config", new StringContent(""));
         }
 
         public async void DeleteUser(string username)
         {
-            // Todo: Insert User
-            var user = "";
-            await client.DeleteAsync($"/api/{user}/config/Whitelist/{username}");
+            await client.DeleteAsync($"/api{settings.Username}/config/Whitelist/{username}");
         }
 
+        public async void GetFullState()
+        {
+            await client.GetAsync($"/api/{settings.Username}");
+        }
     }
 }

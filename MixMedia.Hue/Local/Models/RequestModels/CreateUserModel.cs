@@ -22,14 +22,15 @@ namespace MixMedia.Hue.Local.Models.RequestModels
             get => _deviceType;
             set
             {
-                if(!value.Contains("#"))
-                    throw new ArgumentException(Messages.WrongDeviceTypeValue);
+                // TODO: Care for Messages
+                //if(!value.Contains("#"))
+                //    throw new ArgumentException(Messages.WrongDeviceTypeValue);
 
-                if(value.Split('#')[0].Length > 20)
-                    throw new ArgumentException(Messages.ApplicationNameTooBig);
+                //if(value.Split('#')[0].Length > 20)
+                //    throw new ArgumentException(Messages.ApplicationNameTooBig);
 
-                if (value.Split('#')[1].Length > 19)
-                    throw new ArgumentException(Messages.DeviceNameTooBig);
+                //if (value.Split('#')[1].Length > 19)
+                //    throw new ArgumentException(Messages.DeviceNameTooBig);
 
               _deviceType = value;
             }
