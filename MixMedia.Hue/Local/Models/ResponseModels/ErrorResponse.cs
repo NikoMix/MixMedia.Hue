@@ -2,9 +2,9 @@
 
 namespace MixMedia.Hue.Local.Models.ResponseModels
 {
-    public class FailedResponse<T> : IStatusResponse
+    public class ErrorResponse : IStatusResponse
     {
         [JsonProperty("error")]
-        public T Error { get; set; }
+        public HueError Error { get; set; }
     }
 }

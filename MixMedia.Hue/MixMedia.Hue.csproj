@@ -5,18 +5,26 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Local\Capabilities\" />
-    <Folder Include="Local\Groups\" />
     <Folder Include="Local\Models\Exceptions\" />
-    <Folder Include="Local\Resourcelinks\" />
-    <Folder Include="Local\Rules\" />
-    <Folder Include="Local\Scenes\" />
-    <Folder Include="Local\Schedules\" />
-    <Folder Include="Local\Sensors\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="ExceptionMessages.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ExceptionMessages.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="ExceptionMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

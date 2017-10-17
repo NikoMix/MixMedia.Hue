@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using MixMedia.Hue.Local.Models.RequestModels;
 using MixMedia.Hue.Local.Models.ResponseModels;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace MixMedia.Hue.Local
 {
@@ -30,6 +32,15 @@ namespace MixMedia.Hue.Local
             //}), TimeSpan.FromSeconds(30));
             var response = await client.PostAsync("/api", message);
             var responseString = await response.Content.ReadAsStringAsync();
+
+            JArray responseCollection = JArray.Parse(responseString);
+
+           
+            List<IStatusResponse> responseValues = JsonConvert.DeserializeObject<List<IStatusResponse>>(responseString, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore });
+
+
+            //var question = JsonConvert.DeserializeObject <>(responseValues[0].ToString());
+
             return JsonConvert.DeserializeObject<List<SuccessResponse<CreateUserResponse>>>(responseString);
         }
 
