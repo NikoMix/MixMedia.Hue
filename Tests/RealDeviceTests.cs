@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using MixMedia.Hue.Local;
+using MixMedia.Hue.Local.Manager;
 using Xunit;
 
 namespace MixMedia.Hue.Tests
@@ -23,10 +24,9 @@ namespace MixMedia.Hue.Tests
         [Fact]
         public async Task RegisterUserWithBridgeAsync()
         {
-            var config = new Configuration(client, settings);
+            var config = new ConfigurationManager(client, settings);
             var result = await config.CreateUser(settings.ApplicationName, settings.DeviceName);
-
-
+            
            Assert.NotNull(result);
 
         }

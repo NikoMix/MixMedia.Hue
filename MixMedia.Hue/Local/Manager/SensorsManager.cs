@@ -5,14 +5,14 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MixMedia.Hue.Local
+namespace MixMedia.Hue.Local.Manager
 {
-    public class Sensors
+    public class SensorsManager
     {
         private HttpClient client;
         private ServiceSettings settings;
 
-        public Sensors(HttpClient client, ServiceSettings settings)
+        public SensorsManager(HttpClient client, ServiceSettings settings)
         {
             this.client = client;
             this.settings = settings;

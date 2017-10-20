@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Local\Models\Exceptions\" />
+    <Folder Include="Remote\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -5,14 +5,14 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MixMedia.Hue.Local
+namespace MixMedia.Hue.Local.Manager
 {
-    public class Schedules
+    public class SchedulesManager
     {
         private HttpClient client;
         private ServiceSettings settings;
 
-        public Schedules(HttpClient client, ServiceSettings settings)
+        public SchedulesManager(HttpClient client, ServiceSettings settings)
         {
             this.client = client;
             this.settings = settings;

@@ -9,14 +9,13 @@ using MixMedia.Hue.Local.Models.ResponseModels;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace MixMedia.Hue.Local
+namespace MixMedia.Hue.Local.Manager
 {
-    [ApiEndpoint("/api")]
-    public class Configuration
+    public class ConfigurationManager
     {
         private readonly HttpClient client;
         private readonly ServiceSettings settings;
-        public Configuration(HttpClient client, ServiceSettings settings)
+        public ConfigurationManager(HttpClient client, ServiceSettings settings)
         {
             this.client = client;
             client.BaseAddress = new Uri("http://192.168.0.12");

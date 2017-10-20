@@ -5,14 +5,14 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MixMedia.Hue.Local
+namespace MixMedia.Hue.Local.Manager
 {
-    public class ResourceLinks
+    public class ResourceLinksManager
     {
         private HttpClient client;
         private ServiceSettings settings;
 
-        public ResourceLinks(HttpClient client, ServiceSettings settings)
+        public ResourceLinksManager(HttpClient client, ServiceSettings settings)
         {
             this.client = client;
             this.settings = settings;

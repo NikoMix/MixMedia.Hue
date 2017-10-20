@@ -5,14 +5,14 @@ using MixMedia.Hue.Local.Models;
 using MixMedia.Hue.Local.Models.RequestModels;
 using Newtonsoft.Json;
 
-namespace MixMedia.Hue.Local
+namespace MixMedia.Hue.Local.Manager
 {
-    public class Lights
+    public class LightsManager
     {
         private HttpClient client;
         private ServiceSettings settings;
 
-        public Lights(HttpClient client, ServiceSettings settings)
+        public LightsManager(HttpClient client, ServiceSettings settings)
         {
             this.client = client;
             this.settings = settings;

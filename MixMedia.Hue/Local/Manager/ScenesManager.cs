@@ -5,14 +5,14 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MixMedia.Hue.Local
+namespace MixMedia.Hue.Local.Manager
 {
-    public class Scenes
+    public class ScenesManager
     {
         private HttpClient client;
         private ServiceSettings settings;
 
-        public Scenes(HttpClient client, ServiceSettings settings)
+        public ScenesManager(HttpClient client, ServiceSettings settings)
         {
             this.client = client;
             this.settings = settings;
@@ -35,7 +35,7 @@ namespace MixMedia.Hue.Local
 
         public async void RecallScene()
         {
-            
+            // uses GroupManager
         }
 
         public async void DeleteScene(string id)
